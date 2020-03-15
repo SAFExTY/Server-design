@@ -1,0 +1,17 @@
+title: error
+type: object
+x-examples:
+  error-1:
+    code: 1
+    message: User was not found
+description: Default error model
+properties:
+  code:
+    type: number
+  message:
+    type: string
+required:
+  - code
+  - message
+x-tags:
+  - error
