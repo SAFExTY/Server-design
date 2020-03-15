@@ -1,0 +1,117 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Server",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/users": {
+      "get": {
+        "summary": "User GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-users",
+        "description": "List all users"
+      },
+      "parameters": [],
+      "post": {
+        "summary": "User POST endpoint",
+        "operationId": "post-users",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "description": "Create an user"
+      }
+    },
+    "/users/{userId}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "userId",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-users-userId",
+        "description": "Info for specific user"
+      },
+      "delete": {
+        "summary": "",
+        "operationId": "delete-users-userId",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "description": "Delete specific user"
+      },
+      "put": {
+        "summary": "",
+        "operationId": "put-users-userId",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "description": "Create or update an user"
+      },
+      "post": {
+        "summary": "",
+        "operationId": "post-users-userId",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "description": "Create an user"
+      },
+      "patch": {
+        "summary": "",
+        "operationId": "patch-users-userId",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "description": "Update a part of an user"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "title": "User",
+        "type": "object",
+        "description": "Represents an user",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "username"
+        ]
+      }
+    }
+  }
+}
