@@ -88,6 +88,118 @@
         },
         "description": "Update a part of an user"
       }
+    },
+    "/users/login": {
+      "post": {
+        "summary": "",
+        "operationId": "post-users-login",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "description": "Log in a specific user",
+        "requestBody": {
+          "description": ""
+        }
+      }
+    },
+    "/users/logout": {
+      "post": {
+        "summary": "",
+        "operationId": "post-users-logout",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "description": "Log out a specific user"
+      }
+    },
+    "/users/confirm": {
+      "post": {
+        "summary": "",
+        "operationId": "post-users-confirm",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "description": "Confirm email address for specified user"
+      }
+    },
+    "/users/reset": {
+      "post": {
+        "summary": "",
+        "operationId": "post-users-reset",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "description": "Reset password for the specified user."
+      }
+    },
+    "/users/{userId}/accessTokens": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "userId",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-users-userId-accessTokens",
+        "description": "Returns access token for specified user ID."
+      },
+      "post": {
+        "summary": "",
+        "operationId": "post-users-userId-accessTokens",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "description": "Create access token for specified user ID."
+      },
+      "delete": {
+        "summary": "",
+        "operationId": "delete-users-userId-accessTokens",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "description": "Delete access token for specified user ID."
+      }
+    },
+    "/users/{userId}/exists": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "userId",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "",
+        "operationId": "get-users-userId-exists",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "description": "Return true if specified user ID exists. Inherited from "
+      }
     }
   },
   "components": {
